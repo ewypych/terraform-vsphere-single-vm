@@ -55,4 +55,4 @@ License
 Author
 -------
 
-[Emil Wypych[(https://emilwypych.com)
+[Emil Wypych](https://emilwypych.com)
