@@ -3,10 +3,11 @@ resource "vsphere_virtual_machine" "TEST-VM" {
   vcpu   = 2
   memory = 4096
   domain = "${var.vmdomain}"
+  dns_suffixes = [ "${var.vmdomain}" ]
   datacenter = "YOUR_DC"
   cluster = "${lookup(var.vmcluster,var.vmrp)}"
   resource_pool = "${lookup(var.vmcluster, var.vmrp)}/Resources/${var.vmrp}"
-  dns_servers = ["${lookup(var.vmdns1,var.vmdomain)}, ${lookup(var.vmdns2,var.vmdomain)}"]
+  dns_servers = ["${lookup(var.vmdns1,var.vmdomain)}", "${lookup(var.vmdns2,var.vmdomain)}"]
 
   network_interface {
     label = "${lookup(var.vmnetlabel, var.vmdomain)}"
