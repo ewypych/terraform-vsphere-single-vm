@@ -4,9 +4,14 @@ variable "viserver" {
   default = "vcs1.local.domain"
 }
 
-// default VM name in vSphere and its hostname
+// default VM name in vSphere
 variable "vmname" {
   default = "test-vm"
+}
+
+// default VM hostname
+variable "vmhostname" {
+  default = "test-host"
 }
 
 // default Resource Pool
